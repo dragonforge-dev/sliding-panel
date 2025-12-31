@@ -1,0 +1,260 @@
+[gd_scene load_steps=27 format=3 uid="uid://c0u4iiuw0bxn2"]
+
+[ext_resource type="Texture2D" uid="uid://c6xf0akh5ib1b" path="res://assets/textures/ui/uipackSpace_sheet.png" id="1_37kl0"]
+[ext_resource type="Script" uid="uid://dkimkle3ij6cq" path="res://ui/panel_containers/sliding_panel.gd" id="2_8uh7m"]
+[ext_resource type="Script" uid="uid://0hg4ijs82ev" path="res://ui/buttons/close_button.gd" id="3_6uqi0"]
+[ext_resource type="Script" uid="uid://dqfecae7jomon" path="res://ui/buttons/open_button.gd" id="3_ppyta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uh7m"]
+atlas = ExtResource("1_37kl0")
+region = Rect2(0, 300, 100, 99)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6uqi0"]
+texture = SubResource("AtlasTexture_8uh7m")
+texture_margin_left = 10.0
+texture_margin_top = 30.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ppyta"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ykrsh"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g14j6"]
+atlas = SubResource("CompressedTexture2D_ykrsh")
+region = Rect2(362, 322, 24, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vbegm"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehkex"]
+atlas = SubResource("CompressedTexture2D_vbegm")
+region = Rect2(362, 370, 24, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00tp4"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77dp3"]
+atlas = SubResource("CompressedTexture2D_00tp4")
+region = Rect2(0, 200, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5tkv4"]
+texture = SubResource("AtlasTexture_77dp3")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g14j6"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbegm"]
+atlas = SubResource("CompressedTexture2D_g14j6")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ykrsh"]
+texture = SubResource("AtlasTexture_vbegm")
+texture_margin_left = 10.0
+texture_margin_top = 30.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_77dp3"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tkv4"]
+atlas = SubResource("CompressedTexture2D_77dp3")
+region = Rect2(364, 426, 24, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ppyta"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykrsh"]
+atlas = SubResource("CompressedTexture2D_ppyta")
+region = Rect2(362, 346, 24, 24)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ehkex"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xersf"]
+atlas = SubResource("CompressedTexture2D_ehkex")
+region = Rect2(100, 300, 100, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_00tp4"]
+texture = SubResource("AtlasTexture_xersf")
+texture_margin_left = 10.0
+texture_margin_top = 30.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xersf"]
+load_path = "res://.godot/imported/uipackSpace_sheet.png-a06f866ef323a86117a1840dde922e49.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00tp4"]
+atlas = SubResource("CompressedTexture2D_xersf")
+region = Rect2(360, 402, 24, 24)
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 130
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Press E"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Press R"
+
+[node name="Label3" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Press T"
+
+[node name="Yellow Sliding Panel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6uqi0")
+script = ExtResource("2_8uh7m")
+action_name = "open_yellow_tab"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Yellow Sliding Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Yellow Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Sliding Panel"
+label_settings = SubResource("LabelSettings_ppyta")
+
+[node name="Blue Open Button" type="Button" parent="Yellow Sliding Panel/VBoxContainer" node_paths=PackedStringArray("sliding_panel")]
+layout_mode = 2
+text = "Press Me!"
+icon = SubResource("AtlasTexture_g14j6")
+script = ExtResource("3_ppyta")
+sliding_panel = NodePath("../../../Blue Sliding Panel")
+
+[node name="Close Button" type="Button" parent="Yellow Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+icon = SubResource("AtlasTexture_ehkex")
+script = ExtResource("3_6uqi0")
+
+[node name="Grey Sliding Panel" type="PanelContainer" parent="." node_paths=PackedStringArray("parent_panel")]
+visible = false
+layout_mode = 0
+offset_left = 180.0
+offset_top = 180.0
+offset_right = 303.0
+offset_bottom = 270.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5tkv4")
+script = ExtResource("2_8uh7m")
+open_time = 1.0
+parent_panel = NodePath("../Blue Sliding Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Grey Sliding Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Grey Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Surprise!"
+label_settings = SubResource("LabelSettings_ppyta")
+horizontal_alignment = 1
+
+[node name="Close Button" type="Button" parent="Grey Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+icon = SubResource("AtlasTexture_ehkex")
+script = ExtResource("3_6uqi0")
+
+[node name="Blue Sliding Panel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 170.0
+offset_right = 372.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ykrsh")
+script = ExtResource("2_8uh7m")
+action_name = "open_blue_tab"
+open_time = 1.0
+close_time = 0.8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Blue Sliding Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Blue Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Sliding Panel 2"
+label_settings = SubResource("LabelSettings_ppyta")
+horizontal_alignment = 1
+
+[node name="Green Open Button" type="Button" parent="Blue Sliding Panel/VBoxContainer" node_paths=PackedStringArray("sliding_panel")]
+layout_mode = 2
+text = "PREEEESSSS MEEE"
+icon = SubResource("AtlasTexture_5tkv4")
+script = ExtResource("3_ppyta")
+sliding_panel = NodePath("../../../Green Sliding Panel")
+
+[node name="Grey Open Button2" type="Button" parent="Blue Sliding Panel/VBoxContainer" node_paths=PackedStringArray("sliding_panel")]
+layout_mode = 2
+text = "What does this do?"
+icon = SubResource("AtlasTexture_ykrsh")
+script = ExtResource("3_ppyta")
+sliding_panel = NodePath("../../../Grey Sliding Panel")
+
+[node name="Close Button" type="Button" parent="Blue Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+icon = SubResource("AtlasTexture_ehkex")
+script = ExtResource("3_6uqi0")
+
+[node name="Green Sliding Panel" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 374.0
+offset_right = 576.0
+offset_bottom = 146.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_00tp4")
+script = ExtResource("2_8uh7m")
+action_name = "open_green_tab"
+open_time = 2.0
+close_time = 0.2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Green Sliding Panel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Green Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "ZOMG Another One!"
+label_settings = SubResource("LabelSettings_ppyta")
+horizontal_alignment = 1
+
+[node name="Yellow Open Button" type="Button" parent="Green Sliding Panel/VBoxContainer" node_paths=PackedStringArray("sliding_panel")]
+layout_mode = 2
+text = "Should I Press This One?"
+icon = SubResource("AtlasTexture_00tp4")
+script = ExtResource("3_ppyta")
+sliding_panel = NodePath("../../../Yellow Sliding Panel")
+
+[node name="Close Button" type="Button" parent="Green Sliding Panel/VBoxContainer"]
+layout_mode = 2
+text = "Close"
+icon = SubResource("AtlasTexture_ehkex")
+script = ExtResource("3_6uqi0")
