@@ -8,15 +8,16 @@ signal closing
 @export var parent_panel: SlidingPanel
 
 var tween: Tween
-
 var starting_position: Vector2
+var is_animating = false
+
 
 func _ready() -> void:
 	starting_position = position
 	if visible == false:
 		position.y = -size.y
 	if parent_panel:
-		parent_panel.closing.connect(close)
+		parent_panel.closing.connect(close.bind(true))
 
 
 func _input(event: InputEvent) -> void:
@@ -28,14 +29,23 @@ func _input(event: InputEvent) -> void:
 
 
 func open() -> void:
+	if is_animating:
+		return
+	is_animating = true
 	show()
 	tween = create_tween()
 	tween.tween_property(self, "position:y", starting_position.y, open_time).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	await get_tree().create_timer(open_time).timeout
+	is_animating = false
 
 
-func close() -> void:
+func close(force: bool = false) -> void:
+	if is_animating and not force:
+		return
+	is_animating = true
 	closing.emit()
 	tween = create_tween()
 	tween.tween_property(self, "position:y", -size.y, close_time).set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(close_time).timeout
 	hide()
+	is_animating = false
